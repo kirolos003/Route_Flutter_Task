@@ -10,7 +10,7 @@ class CatalogScreen extends StatefulWidget {
   final String? categoryId;
   final String? categoryName;
 
-  CatalogScreen({this.categoryId, this.categoryName, Key? key}) : super(key: key);
+  const CatalogScreen({this.categoryId, this.categoryName, Key? key}) : super(key: key);
 
   @override
   State<CatalogScreen> createState() => _CatalogScreenState();
@@ -53,14 +53,14 @@ class _CatalogScreenState extends State<CatalogScreen> {
                 children: [
                   Image(
                     image: const AssetImage('assets/images/logo.png'),
-                    width: 100.w,
-                    height: 100.h,
+                    width: 100.r,
+                    height: 100.r,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const CircularProgressIndicator(),
-                      SizedBox(width: 10.w),
+                      SizedBox(width: 10.r),
                       const Text('Loading...'),
                     ],
                   ),

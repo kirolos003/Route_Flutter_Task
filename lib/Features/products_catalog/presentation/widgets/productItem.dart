@@ -18,12 +18,12 @@ class ProductItem extends StatelessWidget {
     return InkWell(
       onTap: () {},
       child: Padding(
-        padding: const EdgeInsets.only(right: 16.0),
+        padding:  EdgeInsets.only(right: 16.0.r),
         child: ClipRRect(
-          borderRadius: BorderRadius.circular(15),
+          borderRadius: BorderRadius.circular(15.r),
           child: Container(
-            height: 122.h,
-            width: 158.w,
+            height: 122.r,
+            width: 158.r,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
               border: Border.all(
@@ -39,13 +39,13 @@ class ProductItem extends StatelessWidget {
                   child: Stack(
                     children:[
                       ClipRRect(
-                        borderRadius: const BorderRadius.only(
-                          topLeft: Radius.circular(15),
-                          topRight: Radius.circular(15),
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(15.r),
+                          topRight: Radius.circular(15.r),
                         ),
                         child: CachedNetworkImage(
                           imageUrl: product.images != null && product.images!.length > 1 ? product.images![1] : '', // Add a null check here
-                          height: 200.h,
+                          height: 200.r,
                           width: double.infinity,
                           placeholder: (context, url) =>
                           const Center(child: CircularProgressIndicator()),
@@ -58,7 +58,6 @@ class ProductItem extends StatelessWidget {
                           child: IconButton(onPressed: (){},
                               icon : InkWell(
                                 onTap: () {
-                                    //viewModel?.onWishListClicked(context , product.id);
                                   },
                               child: Container(
                                 width: 30,
@@ -77,21 +76,21 @@ class ProductItem extends StatelessWidget {
                     ] ,
                   ),
                 ),
-                const SizedBox(height: 8), // Adjust spacing for web
+                 SizedBox(height: 8.r),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  padding: EdgeInsets.symmetric(horizontal: 8.0.r),
                   child: Text(
                     displayText!,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       color: const Color(0xff06004F),
-                      fontSize: 14.sp,
+                      fontSize: 14.r,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
-                const SizedBox(height: 8),
+                 SizedBox(height: 8.r),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -104,19 +103,19 @@ class ProductItem extends StatelessWidget {
                               'EGP',
                               style: TextStyle(
                                 color: const Color(0xff06004F),
-                                fontSize: 9.sp, // Adjust font size for web
+                                fontSize: 9.r,
                               ),
                             ),
-                            const SizedBox(width: 5),
+                             SizedBox(width: 5.r),
                             Text(
                               '${product.price}',
                               style: TextStyle(
                                 color: const Color(0xff06004F),
-                                fontSize: 14.sp, // Adjust font size for web
+                                fontSize: 14.r,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            const SizedBox(width: 10),
+                             SizedBox(width: 10.r),
                             Text(
                               '${product.discountPercentage} %',
                               style: TextStyle(
@@ -129,7 +128,7 @@ class ProductItem extends StatelessWidget {
                           'dis',
                           style: TextStyle(
                             color: const Color(0xff06004F),
-                            fontSize: 10.sp,
+                            fontSize: 10.r,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -146,7 +145,7 @@ class ProductItem extends StatelessWidget {
                                 color: Color(0xff06004F),
                               ),
                             ),
-                            const SizedBox(width: 5),
+                             SizedBox(width: 5.r),
                             const Icon(
                               Icons.star,
                               color: Color(0xffF4B400),
@@ -155,8 +154,8 @@ class ProductItem extends StatelessWidget {
                             InkWell(
                               onTap: (){},
                               child: Image(
-                                width: 30.w,
-                                height: 30.h,
+                                width: 30.r,
+                                height: 30.r,
                                 image: const AssetImage('assets/images/add_button.png'),
                               ),
                             )

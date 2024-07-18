@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_route_task/Features/products_catalog/data/models/Products.dart';
 import 'package:flutter_route_task/Features/products_catalog/presentation/widgets/productItem.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:provider/provider.dart';
-import '../../../../shared/shared_components.dart';
 import '../cubit/catalogViewModel.dart';
 
 
+// ignore: must_be_immutable
 class CatalogWidget extends StatelessWidget {
   final CatalogScreenViewModel? viewModel;
   List<Products> catalogProductsList;
@@ -46,10 +45,10 @@ class CatalogWidget extends StatelessWidget {
                 children: [
                   Expanded(
                     child: Container(
-                      height: 50,
-                      width: MediaQuery.of(context).size.width.w - 80.w,
+                      height: 50.r,
+                      width: MediaQuery.of(context).size.width.w - 80.r,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(25),
+                        borderRadius: BorderRadius.circular(25.r),
                         border: Border.all(
                             color: const Color(0xff004182),
                             strokeAlign: BorderSide.strokeAlignInside,
@@ -64,7 +63,7 @@ class CatalogWidget extends StatelessWidget {
                               AssetImage('assets/images/search.png'),
                               color: Color(0xff004182),
                             ),
-                            SizedBox(width: 10.w),
+                            SizedBox(width: 10.r),
                             const Expanded(
                               child: TextField(
                                 decoration: InputDecoration(
@@ -82,24 +81,24 @@ class CatalogWidget extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(width: 24.w),
+                  SizedBox(width: 24.r),
                   const ImageIcon(
                     AssetImage('assets/images/cart.png'),
                     color: Color(0xff004182),
                   ),
                 ],
               ),
-              SizedBox(height: 16.h),
-              SizedBox(height: 16.h),
+              SizedBox(height: 16.r),
+              SizedBox(height: 16.r),
               Expanded(
                 child: GridView.builder(
-                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    gridDelegate:  SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2,
                         crossAxisSpacing: 0,
-                        mainAxisSpacing: 16,
+                        mainAxisSpacing: 16.r,
                     ),
                     scrollDirection: Axis.vertical,
-                    itemCount: catalogProductsList?.length ?? 0,
+                    itemCount: catalogProductsList.length ,
                     itemBuilder: (context, index) {
                       return InkWell(
                         onTap: () {},
